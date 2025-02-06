@@ -1,0 +1,71 @@
+<!-- TASK:
+            Simulate a pizza delivery system with steps:
+     1)Place order → Prepare pizza → Bake pizza → Pack pizza → Deliver pizza. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery process</title>
+</head>
+<body>
+  <p>check the progress in the console</p>
+    <script>
+        console.log("Welcome to the Pizza Delivery System!");
+
+        function placeOrder(order, callback) {
+          console.log("Placing order for:", order);
+          setTimeout(() => {
+            console.log("Order placed successfully!");
+            callback();
+          }, 1000);
+        }
+        
+        function preparePizza(callback) {
+          console.log("Preparing the pizza...");
+          setTimeout(() => {
+            console.log("Pizza is prepared.");
+            callback();
+          }, 2000);
+        }
+        
+        function bakePizza(callback) {
+          console.log("Baking the pizza...");
+          setTimeout(() => {
+            console.log("Pizza is baked.");
+            callback();
+          }, 3000);
+        }
+        
+        function packPizza(callback) {
+          console.log("Packing the pizza...");
+          setTimeout(() => {
+            console.log("Pizza is packed.");
+            callback();
+          }, 4000);
+        }
+        
+        function deliverPizza(callback) {
+          console.log("Delivering the pizza...");
+          setTimeout(() => {
+            console.log("Pizza delivered to the customer. Enjoy!");
+            callback();
+          }, 5000);
+        }
+        
+        // Initiating the pizza delivery process
+        placeOrder("Margherita", () => {
+          preparePizza(() => {
+            bakePizza(() => {
+              packPizza(() => {
+                deliverPizza(() => {
+                  console.log("Thank you for using our Pizza Delivery System!");
+                });
+              });
+            });
+          });
+        });
+
+    </script>
+</body>
+</html>
